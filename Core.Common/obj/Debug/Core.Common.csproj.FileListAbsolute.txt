@@ -1,0 +1,8 @@
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.csprojResolveAssemblyReference.cache
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.Properties.Resources.resources
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.csproj.GenerateResource.Cache
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Core.Common.dll.config
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Core.Common.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Core.Common.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.pdb

@@ -1,0 +1,12 @@
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\obj\Debug\CarRental.Business.Entities.Properties.Resources.resources
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\obj\Debug\CarRental.Business.Entities.csproj.GenerateResource.Cache
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\obj\Debug\CarRental.Business.Entities.csprojResolveAssemblyReference.cache
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\CarRental.Business.Entities.dll.config
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\CarRental.Business.Entities.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\CarRental.Business.Entities.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\Core.Common.Contracts.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\Core.Common.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\Core.Common.Contracts.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\Core.Common.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\obj\Debug\CarRental.Business.Entities.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\obj\Debug\CarRental.Business.Entities.pdb
