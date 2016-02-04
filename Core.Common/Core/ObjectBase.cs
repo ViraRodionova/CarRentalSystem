@@ -62,25 +62,73 @@ namespace Core.Common.Core
         public bool IsDirty
         {
             get { return _IsDirty; }
+            set { _IsDirty = value; }
         }
 
-        protected List<ObjectBase> GetDirtyObjects()
+        public List<ObjectBase> GetDirtyObjects()
         {
             List<ObjectBase> dirtyObjects = new List<ObjectBase>();
 
+            WalkObjectGraph(
+            o =>
+            {
+                if (o.IsDirty)
+                    dirtyObjects.Add(o);
+                return false;
+            }, coll => {});
+
+            return dirtyObjects;
+        }
+
+        public void CleanAll()
+        {
+            WalkObjectGraph(
+            o =>
+            {
+                if (o.IsDirty)
+                    o.IsDirty = false;
+                return false;
+            }, coll => { });
+        }
+
+        public virtual bool IsAnythingDirty()
+        {
+            bool IsDirty = false;
+
+            WalkObjectGraph(
+            o =>
+            {
+                if (o.IsDirty)
+                {
+                    IsDirty = true;
+                    return true; //short circut
+                }
+                else 
+                    return false;
+            }, coll => { });
+
+            return IsDirty;
+        }
+
+        protected void WalkObjectGraph(Func<ObjectBase, bool> snippetForObject,
+                                       Action<IList> snippetForCollection,
+                                       params string[] exemptProperties)
+        {
             List<ObjectBase> visited = new List<ObjectBase>();
             Action<ObjectBase> walk = null;
 
+            List<string> exemptions = new List<string>();
+            if (exemptProperties != null)
+                exemptions = exemptProperties.ToList();
+
+            //делегат, к которому прикреплена рекурсивная лямбда-функция. Проверка объектов на изменение
             walk = (o) =>
             {
                 if (o != null && !visited.Contains(o))
                 {
                     visited.Add(o);
 
-                    if (o.IsDirty)
-                        dirtyObjects.Add(o);
-
-                    bool exitWalk = false;
+                    bool exitWalk = snippetForObject.Invoke(o);
 
                     if (!exitWalk)
                     {
@@ -88,21 +136,25 @@ namespace Core.Common.Core
                         PropertyInfo[] properties = o.GetType().GetProperties();
                         foreach (PropertyInfo property in properties)
                         {
-                            if (property.PropertyType.IsSubclassOf(typeof(ObjectBase)))
+                            if (!exemptions.Contains(property.Name))
                             {
-                                ObjectBase obj = (ObjectBase)(property.GetValue(o, null));
-                                walk(obj);
-                            }
-                            else
-                            {
-                                IList coll = property.GetValue(o, null) as IList;
-                                if (coll != null)
+                                if (property.PropertyType.IsSubclassOf(typeof(ObjectBase)))
                                 {
-
-                                    foreach (object item in coll)
+                                    ObjectBase obj = (ObjectBase)(property.GetValue(o, null));
+                                    walk(obj);
+                                }
+                                else
+                                {
+                                    IList coll = property.GetValue(o, null) as IList;
+                                    if (coll != null)
                                     {
-                                        if (item is ObjectBase)
-                                            walk((ObjectBase)item);
+                                        snippetForCollection.Invoke(coll);
+
+                                        foreach (object item in coll)
+                                        {
+                                            if (item is ObjectBase)
+                                                walk((ObjectBase)item);
+                                        }
                                     }
                                 }
                             }
@@ -112,8 +164,6 @@ namespace Core.Common.Core
             };
 
             walk(this);
-
-            return dirtyObjects;
         }
     }
 }
