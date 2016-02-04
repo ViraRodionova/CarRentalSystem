@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Core\EntityBase.cs" />
     <Compile Include="Core\ObjectBase.cs" />
+    <Compile Include="Core\Rental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

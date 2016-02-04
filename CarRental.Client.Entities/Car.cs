@@ -10,7 +10,7 @@ namespace CarRental.Client.Entities
     public class Car : ObjectBase
     {
         int _CarId;
-        string _Descriotion;
+        string _Description;
         string _Color;
         int _Year;
         decimal _RentalPrice;
@@ -29,34 +29,69 @@ namespace CarRental.Client.Entities
             }
         }
 
-        public string Dscription
+        public string Description
         {
-            get { return _Descriotion; }
-            set { _Descriotion = value; }
+            get { return _Description; }
+            set
+            {
+                if (_Description != value)
+                {
+                    _Description = value;
+                    OnPropertyChanged(() => Description);
+                }
+            }
         }
 
         public string Color
         {
             get { return _Color; }
-            set { _Color = value; }
+            set
+            {
+                if (_Color != value)
+                {
+                    _Color = value;
+                    OnPropertyChanged(() => Color);
+                }
+            }
         }
 
         public int Year
         {
             get { return _Year; }
-            set { _Year = value; }
+            set
+            {
+                if (_Year != value)
+                {
+                    _Year = value;
+                    OnPropertyChanged(() => Year);
+                }
+            }
         }
 
         public decimal RentalPrice
         {
             get { return _RentalPrice; }
-            set { _RentalPrice = value; }
+            set
+            {
+                if (_RentalPrice != value)
+                {
+                    _RentalPrice = value;
+                    OnPropertyChanged(() => RentalPrice);
+                }
+            }
         }
 
         public bool CurrentlyRented
         {
             get { return _CurrentlyRented; }
-            set { _CurrentlyRented = value; }
+            set
+            {
+                if (_CurrentlyRented != value)
+                {
+                    _CurrentlyRented = value;
+                    OnPropertyChanged(() => CurrentlyRented);
+                }
+            }
         }
     }
 }

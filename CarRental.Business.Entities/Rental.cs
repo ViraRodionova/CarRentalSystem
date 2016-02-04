@@ -21,7 +21,7 @@ namespace CarRental.Business.Entities
         [DataMember]
         public DateTime DateRented { get; set; }
         [DataMember]
-        public DateTime DataReturned { get; set; }
+        public DateTime? DataReturned { get; set; }
         [DataMember]
         public DateTime DateDue { get; set; }
 
