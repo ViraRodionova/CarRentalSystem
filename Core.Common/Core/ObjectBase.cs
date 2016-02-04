@@ -76,6 +76,12 @@ namespace Core.Common.Core
             OnPropertyChanged(propertyName);
         }
 
+        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> propertyExpression, bool makeDirty)
+        {
+            string propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
+            OnPropertyChanged(propertyName, makeDirty);
+        }
+
         #endregion
 
         #region DirtyObjects
