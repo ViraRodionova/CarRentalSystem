@@ -6,3 +6,8 @@ C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Core.Common.pdb
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\obj\Debug\Core.Common.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Microsoft.Practices.Prism.Mvvm.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
