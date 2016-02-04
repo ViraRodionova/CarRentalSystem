@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using Microsoft.Practices.Prism.Mvvm;
+using System.Reflection;
+using System.Collections;
 
 namespace Core.Common.Core
 {
@@ -60,6 +62,58 @@ namespace Core.Common.Core
         public bool IsDirty
         {
             get { return _IsDirty; }
+        }
+
+        protected List<ObjectBase> GetDirtyObjects()
+        {
+            List<ObjectBase> dirtyObjects = new List<ObjectBase>();
+
+            List<ObjectBase> visited = new List<ObjectBase>();
+            Action<ObjectBase> walk = null;
+
+            walk = (o) =>
+            {
+                if (o != null && !visited.Contains(o))
+                {
+                    visited.Add(o);
+
+                    if (o.IsDirty)
+                        dirtyObjects.Add(o);
+
+                    bool exitWalk = false;
+
+                    if (!exitWalk)
+                    {
+                        //!!!! in example: PropertyInfo[] properties = o.GetBrowsableProperties(); 
+                        PropertyInfo[] properties = o.GetType().GetProperties();
+                        foreach (PropertyInfo property in properties)
+                        {
+                            if (property.PropertyType.IsSubclassOf(typeof(ObjectBase)))
+                            {
+                                ObjectBase obj = (ObjectBase)(property.GetValue(o, null));
+                                walk(obj);
+                            }
+                            else
+                            {
+                                IList coll = property.GetValue(o, null) as IList;
+                                if (coll != null)
+                                {
+
+                                    foreach (object item in coll)
+                                    {
+                                        if (item is ObjectBase)
+                                            walk((ObjectBase)item);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            walk(this);
+
+            return dirtyObjects;
         }
     }
 }
