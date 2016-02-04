@@ -24,7 +24,7 @@ namespace CarRental.Client.Entities
                 if (_CarId != value) 
                 {
                     _CarId = value;
-                    OnPropertyChaned("CarId");
+                    OnPropertyChanged("CarId");
                 }
             }
         }

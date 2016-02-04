@@ -9,17 +9,36 @@ namespace Core.Common.Core
 {
     public abstract class ObjectBase : INotifyPropertyChanged 
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        private event PropertyChangedEventHandler _PropertyChanged;
+        List<PropertyChangedEventHandler> PropertyChandedEventSubscribers
+            = new List<PropertyChangedEventHandler>();
 
-        protected virtual void OnPropertyChaned(string propertyName)
+        public event PropertyChangedEventHandler PropertyChanged
+        {
+            add
+            {
+                if(!PropertyChandedEventSubscribers.Contains(value))
+                {
+                    _PropertyChanged += value;
+                    PropertyChandedEventSubscribers.Add(value);
+                }
+            }
+            remove
+            {
+                _PropertyChanged -= value;
+                PropertyChandedEventSubscribers.Remove(value);
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
         {
             OnProertyChanged(propertyName, true);
         }
 
         protected virtual void OnProertyChanged(string propertyName, bool makeDirty)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            if (_PropertyChanged != null)
+                _PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             
             if (makeDirty)
                 _IsDirty = true;
@@ -30,7 +49,5 @@ namespace Core.Common.Core
         {
             get { return _IsDirty; }
         }
-
-        //этот комментарий находится здесь для проверки работоспособнрости Git
     }
 }
