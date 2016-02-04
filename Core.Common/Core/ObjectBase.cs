@@ -197,6 +197,7 @@ namespace Core.Common.Core
             return null;
         }
 
+        //[NotNavigable]
         public IEnumerable<ValidationFailure> ValidationErrors
         {
             get { return _ValidationErrors; }
@@ -212,6 +213,7 @@ namespace Core.Common.Core
             }
         }
 
+        //[NotNavigable]
         public bool IsValid
         {
             get
@@ -224,14 +226,30 @@ namespace Core.Common.Core
 
         #endregion
 
-        public string Error
+        #region IDataErrorInfo Members
+        string IDataErrorInfo.Error
         {
-            get { throw new NotImplementedException(); }
+            get { return string.Empty; }
         }
 
-        public string this[string columnName]
+        string IDataErrorInfo.this[string columnName]
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                StringBuilder errors = new StringBuilder();
+
+                if (_ValidationErrors != null && _ValidationErrors.Count() > 0)
+                {
+                    foreach (ValidationFailure validationError in _ValidationErrors)
+                    {
+                        if (validationError.PropertyName == columnName)
+                            errors.AppendLine(validationError.ErrorMessage);
+                    }
+                }
+
+                return errors.ToString();
+            }
         }
+        #endregion
     }
 }
