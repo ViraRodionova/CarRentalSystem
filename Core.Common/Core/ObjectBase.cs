@@ -8,11 +8,25 @@ using System.Linq.Expressions;
 using Microsoft.Practices.Prism.Mvvm;
 using System.Reflection;
 using System.Collections;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace Core.Common.Core
 {
-    public abstract class ObjectBase : INotifyPropertyChanged
+    public abstract class ObjectBase : INotifyPropertyChanged, IDataErrorInfo
     {
+        public ObjectBase()
+        {
+            _Validator = GetValidator();
+            Validate();
+        }
+
+        protected bool _IsDirty;
+        protected IValidator _Validator = null;
+
+        protected IEnumerable<ValidationFailure> _ValidationErrors = null;
+
+
         #region INotifyPropertyChanged Members
 
         private event PropertyChangedEventHandler _PropertyChanged;
@@ -38,6 +52,8 @@ namespace Core.Common.Core
 
         #endregion
 
+        #region OnPropertyChanged Notifications
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             OnPropertyChanged(propertyName, true);
@@ -50,6 +66,8 @@ namespace Core.Common.Core
             
             if (makeDirty)
                 _IsDirty = true;
+
+            Validate();
         }
 
         protected virtual void OnPropertyChanged<T>(Expression<Func<T>> propertyExpression)
@@ -58,8 +76,9 @@ namespace Core.Common.Core
             OnPropertyChanged(propertyName);
         }
 
-        bool _IsDirty;
+        #endregion
 
+        #region DirtyObjects
         //[NotNavigable]
         public bool IsDirty
         {
@@ -111,7 +130,9 @@ namespace Core.Common.Core
 
             return IsDirty;
         }
+        #endregion
 
+        #region WalkObjectGraph Method
         protected void WalkObjectGraph(Func<ObjectBase, bool> snippetForObject,
                                        Action<IList> snippetForCollection,
                                        params string[] exemptProperties)
@@ -166,6 +187,51 @@ namespace Core.Common.Core
             };
 
             walk(this);
+        }
+        #endregion
+
+        #region Validation
+
+        protected virtual IValidator GetValidator()
+        {
+            return null;
+        }
+
+        public IEnumerable<ValidationFailure> ValidationErrors
+        {
+            get { return _ValidationErrors; }
+            set { }
+        }
+
+        public void Validate()
+        {
+            if (_Validator != null)
+            {
+                ValidationResult results = _Validator.Validate(this);
+                _ValidationErrors = results.Errors;
+            }
+        }
+
+        public bool IsValid
+        {
+            get
+            {
+                if (_ValidationErrors != null && _ValidationErrors.Count() > 0)
+                    return false;
+                else return true;
+            }
+        }
+
+        #endregion
+
+        public string Error
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public string this[string columnName]
+        {
+            get { throw new NotImplementedException(); }
         }
     }
 }
