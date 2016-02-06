@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAccountOwnedEntity.cs" />
+    <Compile Include="IDataRepository.cs" />
     <Compile Include="IIdentifiableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
