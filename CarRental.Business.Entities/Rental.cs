@@ -36,13 +36,12 @@ namespace CarRental.Business.Entities
         #endregion
         
         #region IAccountOwnedEntity Members
-       
-        public int OwnerAccountId
+
+        int IAccountOwnedEntity.OwnerAccountId
         {
             get { return AccountId; }
         }
 
         #endregion
-        
     }
 }

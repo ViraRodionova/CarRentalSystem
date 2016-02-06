@@ -10,7 +10,7 @@ using Core.Common.Contracts;
 namespace CarRental.Business.Entities
 {
     [DataContract]
-    public class Resrvation : EntityBase, IIdentifiableEntity, IAccountOwnedEntity
+    public class Reservation : EntityBase, IIdentifiableEntity, IAccountOwnedEntity
     {
         [DataMember]
         public int ReservationId { get; set; }
@@ -34,8 +34,8 @@ namespace CarRental.Business.Entities
         #endregion
                 
         #region IAccountOwnedEntity Members
-        
-        public int OwnerAccountId
+
+        int IAccountOwnedEntity.OwnerAccountId
         {
             get { return AccountId; }
         }
