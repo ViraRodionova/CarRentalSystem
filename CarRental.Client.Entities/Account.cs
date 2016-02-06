@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentValidation;
 
 namespace CarRental.Client.Entities
 {
@@ -148,6 +149,27 @@ namespace CarRental.Client.Entities
                     OnPropertyChanged(() => ExpDate);
                 }
             }
+        }
+
+        class AccountValidator : AbstractValidator<Account>
+        {
+            public AccountValidator()
+            {
+                RuleFor(obj => obj.LoginEmail).NotEmpty();
+                RuleFor(obj => obj.FirstName).NotEmpty();
+                RuleFor(obj => obj.LastName).NotEmpty();
+                RuleFor(obj => obj.Address).NotEmpty();
+                RuleFor(obj => obj.City).NotEmpty();
+                RuleFor(obj => obj.State).NotEmpty();
+                RuleFor(obj => obj.ZipCode).NotEmpty();
+                RuleFor(obj => obj.CreditCard).Length(16);
+                //???RuleFor(obj => obj.ExpDate)
+            }
+        }
+
+        protected override IValidator GetValidator()
+        {
+            return new AccountValidator();
         }
     }
 }
