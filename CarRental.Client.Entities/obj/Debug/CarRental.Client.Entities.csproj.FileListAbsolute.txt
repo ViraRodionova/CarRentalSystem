@@ -31,3 +31,7 @@ C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.C
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\Microsoft.Practices.Prism.Mvvm.xml
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\Core.Common.Contracts.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\EntityFramework.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\Core.Common.Contracts.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Client.Entities\bin\Debug\EntityFramework.xml

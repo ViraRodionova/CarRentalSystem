@@ -33,3 +33,5 @@ C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.B
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\sv\FluentValidation.resources.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\tr\FluentValidation.resources.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\EntityFramework.dll
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\CarRental.Business.Entities\bin\Debug\EntityFramework.xml

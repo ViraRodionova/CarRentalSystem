@@ -7,7 +7,7 @@ using Core.Common.Contracts;
 
 namespace CarRental.Data
 {
-    class CarRentalContext : DbContext
+    public class CarRentalContext : DbContext
     {
         public CarRentalContext()
             : base("name=CarRental")

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Core.Common.Data
 {
-    class DataRepositoryBase<T, U> : IDataRepository<T>
+    public abstract class DataRepositoryBase<T, U> : IDataRepository<T>
         where T: class, IIdentifiableEntity, new()
         where U: DbContext, new()
     {
