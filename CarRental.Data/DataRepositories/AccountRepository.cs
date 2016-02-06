@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CarRental.Business.Entities;
+using CarRental.Data.Contracts.RepositoryInterfaces;
+using System.ComponentModel.Composition;
+
 
 namespace CarRental.Data.DataRepositories
 {
-    public class AccountRepository : DataRepositoryBase<Account>
+    [Export(typeof(IAccountRepository))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
+    public class AccountRepository : DataRepositoryBase<Account>, IAccountRepository
     {
         protected override Account AddEntity(CarRentalContext entityContext, Account entity)
         {
@@ -35,6 +40,16 @@ namespace CarRental.Data.DataRepositories
             var results = query.FirstOrDefault();
 
             return results;
+        }
+
+        public Account GetByLogin(string login)
+        {
+            using (CarRentalContext entityContext = new CarRentalContext())
+            {
+                return (from a in entityContext.AccountSet
+                        where a.LoginEmail == login
+                        select a).FirstOrDefault();
+            }
         }
     }
 }
