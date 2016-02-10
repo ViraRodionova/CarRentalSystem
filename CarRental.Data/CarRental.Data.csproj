@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CarRentalContext.cs" />
     <Compile Include="DataRepositories\AccountRepository.cs" />
+    <Compile Include="DataRepositories\CarRepository.cs" />
     <Compile Include="DataRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
