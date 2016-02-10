@@ -40,6 +40,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,7 @@
     <Compile Include="CarRentalContext.cs" />
     <Compile Include="DataRepositories\AccountRepository.cs" />
     <Compile Include="DataRepositories\CarRepository.cs" />
+    <Compile Include="DataRepositories\ReservationRepository.cs" />
     <Compile Include="DataRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +60,10 @@
     <ProjectReference Include="..\CarRental.Business.Entities\CarRental.Business.Entities.csproj">
       <Project>{a350013f-f44a-4dbf-899a-cc8c41a283b2}</Project>
       <Name>CarRental.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarRental.Client.Entities\CarRental.Client.Entities.csproj">
+      <Project>{c0edab2b-4d2b-42cf-acfb-2a01a465c2c3}</Project>
+      <Name>CarRental.Client.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRental.Data.Contracts\CarRental.Data.Contracts.csproj">
       <Project>{e74fa3da-b255-4e82-a83d-e75309124563}</Project>
