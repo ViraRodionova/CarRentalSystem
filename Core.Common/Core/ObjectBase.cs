@@ -10,10 +10,12 @@ using System.Reflection;
 using System.Collections;
 using FluentValidation;
 using FluentValidation.Results;
+using System.Runtime.Serialization;
+using System.ComponentModel.Composition.Hosting;
 
 namespace Core.Common.Core
 {
-    public abstract class ObjectBase : INotifyPropertyChanged, IDataErrorInfo
+    public abstract class ObjectBase : INotifyPropertyChanged, IDataErrorInfo, IExtensibleDataObject
     {
         public ObjectBase()
         {
@@ -26,6 +28,13 @@ namespace Core.Common.Core
 
         protected IEnumerable<ValidationFailure> _ValidationErrors = null;
 
+        public static CompositionContainer Container { get; set; }
+
+        #region IExtensibleDataObject Members
+
+        public ExtensionDataObject ExtensionData { get; set; }
+
+        #endregion
 
         #region INotifyPropertyChanged Members
 
@@ -257,5 +266,6 @@ namespace Core.Common.Core
             }
         }
         #endregion
+
     }
 }

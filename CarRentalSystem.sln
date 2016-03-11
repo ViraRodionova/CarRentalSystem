@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "DataRepositories", "DataRepositories\DataRepositories.modelproj", "{95B9A2B3-1E40-4D24-8E7B-F9ECD71200AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Bootstrapper", "CarRental.Business.Bootstrapper\CarRental.Business.Bootstrapper.csproj", "{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +140,16 @@ Global
 		{95B9A2B3-1E40-4D24-8E7B-F9ECD71200AC}.Release|ARM.ActiveCfg = Release|Any CPU
 		{95B9A2B3-1E40-4D24-8E7B-F9ECD71200AC}.Release|x64.ActiveCfg = Release|Any CPU
 		{95B9A2B3-1E40-4D24-8E7B-F9ECD71200AC}.Release|x86.ActiveCfg = Release|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Release|x64.ActiveCfg = Release|Any CPU
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,5 +163,6 @@ Global
 		{D5DE19D8-4A34-4873-81A1-1DCBDD402A4C} = {406651B0-49FA-42B2-BC77-38482F424590}
 		{E74FA3DA-B255-4E82-A83D-E75309124563} = {406651B0-49FA-42B2-BC77-38482F424590}
 		{ECD04841-4F9A-462A-AEC4-81C3305D4867} = {057D8B05-E187-48D8-9806-3E604F7DBDA6}
+		{0A0CEF8E-AA75-44D7-9151-4936D2481BF2} = {59547B1B-A32E-4EFD-AB74-1ED9B664B681}
 	EndGlobalSection
 EndGlobal

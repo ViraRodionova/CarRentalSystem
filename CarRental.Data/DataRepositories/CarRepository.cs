@@ -2,12 +2,15 @@
 using CarRental.Data.Contracts.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CarRental.Data.DataRepositories
 {
+    [Export(typeof(ICarRepository))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     class CarRepository : DataRepositoryBase<Car>, ICarRepository
     {
         protected override Car AddEntity(CarRentalContext entityContext, Car entity)

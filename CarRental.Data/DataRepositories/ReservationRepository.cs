@@ -8,6 +8,8 @@ using CarRental.Data.Contracts.RepositoryInterfaces;
 
 namespace CarRental.Data.DataRepositories
 {
+    [Export(typeof(IReservationRepository))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     class ReservationRepository : DataRepositoryBase<Reservation>, IReservationRepository
     {
         protected override Reservation AddEntity(CarRentalContext entityContext, Reservation entity)

@@ -1,8 +1,8 @@
-C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.csprojResolveAssemblyReference.cache
-C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.Properties.Resources.resources
-C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.csproj.GenerateResource.Cache
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\bin\Debug\Core.Common.Contracts.dll.config
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\bin\Debug\Core.Common.Contracts.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\bin\Debug\Core.Common.Contracts.pdb
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.Properties.Resources.resources
+C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.csproj.GenerateResource.Cache
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.dll
 C:\Users\bepar\Documents\Visual Studio 2013\Projects\CarRentalSystem\Core.Common.Contracts\obj\Debug\Core.Common.Contracts.pdb
